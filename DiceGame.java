@@ -14,7 +14,6 @@ public final class DiceGame {
     // this comment makes the linter happy
   }
 
-
   /**
    * The main method prints a stylish greeting message.
    *
