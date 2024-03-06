@@ -2,8 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * This program is a game in which the user has to guess
- * what the number on a dice is.
+ * This program is a game in which the user has to guess what the number on a dice is.
  *
  * @author Ioana Marinescu
  * @version 1.0
@@ -30,7 +29,7 @@ public final class DiceGame {
     final int min = 1;
     final int max = 6;
     int counter = 0;
-    int userNum, diceNum; 
+    int userNum, diceNum;
 
     // display introduction message
     System.out.print("Welcome to the Dice Game! You will have to guess");
@@ -50,11 +49,11 @@ public final class DiceGame {
         if (userNum < 1 || userNum > 6) {
           throw new InputMismatchException("Number must be between 1 and 6");
 
-        // checks if user is higher than dice number
+          // checks if user is higher than dice number
         } else if (userNum > diceNum) {
           System.out.println("The dice rolled lower. Guess again!");
 
-        // checks if user is lower than dice number
+          // checks if user is lower than dice number
         } else if (userNum < diceNum) {
           System.out.println("The dice rolled higher. Guess again!");
         }
