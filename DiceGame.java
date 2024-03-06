@@ -35,7 +35,7 @@ public final class DiceGame {
 
     try {
       // generates random number
-      diceNum = (int) Math.random() * (min - max) + min;
+      diceNum = (int) (Math.random() * (max - min + 1)) + min;
 
       // do while that loops until user guesses correctly
       do {
@@ -43,18 +43,25 @@ public final class DiceGame {
         System.out.println("Enter a number (1-6):");
         userNum = scanner.nextInt();
 
+        // checks if user input is between 1 and 6
+        if (userNum < 1 || userNum > 6) {
+          throw new InputMismatchException("Number must be between 1 and 6");
+
         // checks if user is higher than dice number
-        if (userNum > diceNum) {
-          System.out.println("The dice rolled higher. Guess again!");
+        } else if (userNum > diceNum) {
+          System.out.println("The dice rolled lower. Guess again!");
 
         // checks if user is lower than dice number
         } else if (userNum < diceNum) {
-          System.out.println("The dice rolled lower. Guess again!");
+          System.out.println("The dice rolled higher. Guess again!");
         }
 
         //counter increment
         counter++;
       } while (userNum != diceNum);
+
+      // closes scanner
+      scanner.close();
 
       // displays result to console
       System.out.print("Congrats! You guessed correctly! It took you ");
@@ -64,8 +71,5 @@ public final class DiceGame {
       // output error message to console
       System.out.println("Please enter a valid integer from 1 to 6.");
     }
-
-    // closes scanner
-    scanner.close();
   }
 }
