@@ -25,10 +25,10 @@ public final class DiceGame {
     // and this helps get rid of the yellow squiggly line.
     @SuppressWarnings("resource")
     // imports scanner
-    Scanner scanner = new Scanner(System.in);
+    final Scanner scanner = new Scanner(System.in);
     // variable declaration
-    int min = 1;
-    int max = 6;
+    final int min = 1;
+    final int max = 6;
     int counter = 0;
     int userNum, diceNum; 
 
@@ -59,7 +59,7 @@ public final class DiceGame {
           System.out.println("The dice rolled higher. Guess again!");
         }
 
-        //counter increment
+        // counter increment
         counter++;
       } while (userNum != diceNum);
 
