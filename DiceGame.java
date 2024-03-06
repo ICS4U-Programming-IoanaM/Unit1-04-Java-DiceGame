@@ -21,6 +21,9 @@ public final class DiceGame {
    * @param args Command-line arguments (not used in this program)
    */
   public static void main(final String[] args) {
+    // scanner is complaining that it never closes when it does
+    // and this helps get rid of the yellow squiggly line.
+    @SuppressWarnings("resource")
     // imports scanner
     Scanner scanner = new Scanner(System.in);
     // variable declaration
