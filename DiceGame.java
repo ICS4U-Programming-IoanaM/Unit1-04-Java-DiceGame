@@ -29,7 +29,8 @@ public final class DiceGame {
     final int min = 1;
     final int max = 6;
     int counter = 0;
-    int userNum, diceNum;
+    int userNum;
+    int diceNum;
 
     // display introduction message
     System.out.print("Welcome to the Dice Game! You will have to guess");
